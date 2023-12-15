@@ -6,20 +6,21 @@ abstract public class Kato_Chapter17 {
 
 	public String givenName = ""; //名を表すフィールド
 
-	public String address = "住所は東京都中野区〇×です"; //住所を表すフィールド
+	public String address = "東京都中野区〇×です"; //住所を表すフィールド
 
-	//共通の紹介を出力するメソッド
 	public void commonIntroduce() {
 
-		System.out.println(familyName);
+		System.out.println("名前は" +familyName + this.givenName + "です");
+		System.out.println("住所は" + this.address + "です");
 
 	}
 
-	//個別の紹介を出力するメソッド
 	abstract public void eachIntroduce();
 
-	//紹介を実行するメソッド
 	public void execIntroduce() {
+		this.commonIntroduce();
+		this.eachIntroduce(); // eachIntroduce()メソッドを呼び出す
+		System.out.println();
 	}
 
 }
